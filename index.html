@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>ShareYourDay</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="themes/colourtheme.min.css" />
+    <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="shareyourday_script.js"></script>
+</head>
+<body>
+<div data-role="page" id="entries">
+
+    <div data-role="header">
+        <h1>Share Your Day</h1>
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#entries"
+                       class="ui-btn ui-icon-bullets ui-btn-icon-top ui-btn-active ui-state-persist">Entries</a></li>
+                <li><a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-top">Settings</a></li>
+                <li><a href="#about" class="ui-btn ui-icon-user ui-btn-icon-top">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div data-role="ui-content">
+        <input type="text" name="title" placeholder="Title">
+        <input type="text" name="description" placeholder="Description">
+
+        <button onclick="addEntry();">Add Entry</button>
+        <br>
+
+        <ul id="entrieslistview" data-role="listview" data-inset="true"></ul>
+        <br>
+        <button onclick="deleteLatestEntry();">Delete Latest Entry</button>
+    </div>
+
+</div>
+
+<div data-role="page" id="edit">
+
+    <div data-role="header">
+        <h1>Share Your Day</h1>
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#entries"
+                       class="ui-btn ui-icon-bullets ui-btn-icon-top ui-btn-active ui-state-persist">Entries</a></li>
+                <li><a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-top">Settings</a></li>
+                <li><a href="#about" class="ui-btn ui-icon-user ui-btn-icon-top">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div data-role="ui-content">
+        <div data-role="fieldcontain">
+            <label for="titleinput">Title:</label>
+            <input type="text" name="titleinput" id="titleinput" value=""/>
+        </div>
+
+        <div data-role="fieldcontain">
+            <label for="descriptioninput">Description:</label>
+            <input type="text" name="descriptioninput" id="descriptioninput" value=""/>
+        </div>
+
+        <br>
+
+        <button id="savechangesbutton" onclick="saveChanges();">Save Changes</button>
+        <button id="deleteentrybutton" onclick="deleteEntry();">Delete Entry</button>
+    </div>
+
+</div>
+
+<div data-role="page" id="settings">
+
+    <div data-role="header">
+        <h1>Share Your Day</h1>
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#entries" class="ui-btn ui-icon-bullets ui-btn-icon-top">Entries</a></li>
+                <li><a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-top ui-btn-active ui-state-persist">Settings</a>
+                </li>
+                <li><a href="#about" class="ui-btn ui-icon-user ui-btn-icon-top">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div data-role="ui-content">
+        <fieldset>
+            <div data-role="fieldcontain">
+                <label for="soundswitch">Sound:</label>
+                <select id="soundswitch" name="soundswitch" data-role="flipswitch">
+                    <option value="Off">Off</option>
+                    <option value="On">On</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>Select a Colourtheme:</legend>
+            <div data-role="fieldcontain">
+                <input type="radio" name="radio-choice-2" id="radio-red" value="choice-1" checked="checked">
+                <label for="radio-red">Red</label>
+
+                <input type="radio" name="radio-choice-2" id="radio-green" value="choice-2">
+                <label for="radio-green">Green</label>
+
+                <input type="radio" name="radio-choice-2" id="radio-blue" value="choice-3">
+                <label for="radio-blue">Blue</label>
+
+                <input type="radio" name="radio-choice-2" id="radio-purple" value="choice-4">
+                <label for="radio-purple">Purple</label>
+            </div>
+        </fieldset>
+    </div>
+
+</div>
+
+<div data-role="page" id="about">
+
+    <div data-role="header">
+        <h1>Share Your Day</h1>
+        <nav data-role="navbar">
+            <ul>
+                <li><a href="#entries" class="ui-btn ui-icon-bullets ui-btn-icon-top">Entries</a></li>
+                <li><a href="#settings" class="ui-btn ui-icon-gear ui-btn-icon-top">Settings</a></li>
+                <li><a href="#about"
+                       class="ui-btn ui-icon-user ui-btn-icon-top ui-btn-active ui-state-persist">About</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div data-role="ui-content">
+        <div data-role="content" id="content">
+            <img src="hyperhero.gif" style="display:block; margin:auto;">
+
+            <h1 align="center">Proudly made by</h1>
+            <h1 align="center">HYPERHERO</h1>
+
+            <h2 align="center"><a href="http://www.hyperhero.com">www.hyperhero.com</a></h2>
+        </div>
+    </div>
+
+</div>
+
+
+</body>
+</html>
